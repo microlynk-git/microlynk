@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@font-face{
+  font-family: 'Satoshi';
+  src: url("/fonts/OTF/Satoshi-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face{
+  font-family: 'Inter';
+  src: url('/fonts/static/Inter_24pt-Regular.ttf') format('truetype') 
+}
+
+.font-regular{
+  font-family: 'Satoshi', sans-serif;
+}
+
+.font-inter{
+  font-family: 'Inter', sans-serif;
+}
+
+
+@theme{
+  --color-backgroundDarkBlue: #0F172A;
+  --color-backgroundDarkBlue2: #14213d;
+  --color-backgroundBlue: #15223F;
+  --color-backgroundLightBlue: #003B75;
+  --color-gradientBlue: #0056ABDB;
+  --color-cardBlue: #15213B;
+  --color-lightBlack: #3B3B3B;
+  --color-tick: #0081FF;
+  --color-backgroundLight: #F4F6F9;
+  --color-greyText: #404040;
+  --color-blueText: #2681DA;
+  --color-lightBlueText: #4895ef;
+  --font-regular: 'Satoshi', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+}
+
+
+/* Infinite marquee for technology partners */
+@keyframes slide-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    /* Pixel-perfect by using a custom property set on the track */
+    transform: translate3d(var(--marquee-offset, -50%), 0, 0);
+  }
+}
+
+@utility animate-slide-left {
+  animation: slide-left var(--marquee-duration, 16s) linear infinite;
+}
+
+
+.animate-slide-right {
+  animation: slide-right var(--marquee-duration) linear infinite;
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(var(--marquee-offset));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
